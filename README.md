@@ -1,13 +1,5 @@
 # Changelog
 
-## [0.3] - 2019-07-09
+## [0.1] - 16-07-2019
 ### Added
-- Third commit
-
-## [0.2] - 2019-07-09
-### Added
-- Second commit
-
-## [0.1] - 2019-07-09
-### Added
-- First commit
+- First commit after creating "dev" and "features-magazin-online" branches
