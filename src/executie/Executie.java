@@ -10,7 +10,7 @@ public class Executie {
 
     public static void main(String[] args) {
 
-        //HashMap<String,Integer> cc =new HashMap<>();
+        HashMap<String,Integer> cos =new HashMap<>();
 
         Produs NewProduct = new Produs();
         Magazin NewStore =new Magazin();
@@ -18,8 +18,8 @@ public class Executie {
         NewProduct.setNumeProdus("Sony Bravia");
         NewStore.adaugaStocMagazin(NewProduct,30);
         Client Mircea = new Client();
-        Mircea.adaugaInCosulDeCumparaturi("Sony Bravia", 15);
-        //Mircea.cumpara();
-        NewStore.interogareStoc();
+        cos = Mircea.adaugaInCosulDeCumparaturi("Sony Bravia", 15);
+        cos = Mircea.adaugaInCosulDeCumparaturi("iPhone XS", 2);
+        NewStore.interogareStoc(cos);
     }
 }

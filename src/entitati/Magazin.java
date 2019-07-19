@@ -6,6 +6,7 @@ import utils.Metode;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
+import java.util.Set;
 
 public class Magazin extends Marketplace {
 
@@ -32,26 +33,21 @@ public class Magazin extends Marketplace {
         System.out.println("Am adaugat in stocul magazinului " + this.numeMagazin + " produsul de tip " + produs.numeProdus + " in cantitate de " + cantitate + " bucati");
     }
 
-    public void interogareStoc(HashMap<String, Integer> cosCumparaturi) {
+    public void interogareStoc (HashMap<String, Integer> cosCumparaturi) {
 
-        for (Map.Entry i : stocMagazin.entrySet()){
-            for(Map.Entry j: cosCumparaturi.entrySet()){
-                if (i.getKey() == j.getKey()){
-                    System.out.println("Produsul " + i.getKey() + " este pe stoc");
-                    if (i.getValue() == j.getValue()){
-                        System.out.println("Produsul " + i.getKey() + " in cantitatea dorita");
-                    }
-                    else {
-                        System.out.println("Produsul "+ i.getKey()+ " nu este pe stoc in cantitatea dorita");
-                    }
+        System.out.println("Interogare stoc: ");
+        Set<String> produseDinCos = cosCumparaturi.keySet();
+        for (String p : produseDinCos) {
+            if (stocMagazin.containsKey(p)) {
+                if (stocMagazin.get(p) >= cosCumparaturi.get(p)) {
+                    System.out.println("    produsul " + p + " este pe stoc in cantitatea dorita de client!");
+                } else {
+                    System.out.println("    produsul " + p + " NU este pe stoc cu cantitatea dorita!");
                 }
-                else {
-                    System.out.println("Produsl " +j.getKey()+ " nu este pe stoc");
-                }
+            } else {
+                System.out.println("    produsul " + p + " NU este pe stoc!");
             }
         }
-
-
     }
     public void orarMagazin() {
         orar.put("Duminca   ", " Magazinul este inchis");
@@ -64,8 +60,5 @@ public class Magazin extends Marketplace {
         for (String key : orar.keySet()){
             System.out.println(key + " " + orar.get(key));
         }
-
     }
-
-
 }
