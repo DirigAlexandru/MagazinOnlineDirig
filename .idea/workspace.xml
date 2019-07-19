@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d272c36d-145f-442d-8577-08a063cf5372" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/entitati/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entitati/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entitati/Magazin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entitati/Magazin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entitati/Produs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entitati/Produs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/executie/Executie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/executie/Executie.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/entitati/Cos.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -40,11 +37,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/entitati/Magazin.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="82">
-              <caret line="74" column="5" lean-forward="true" selection-start-line="74" selection-start-column="5" selection-end-line="74" selection-end-column="5" />
+            <state relative-caret-position="372">
+              <caret line="102" column="1" lean-forward="true" selection-start-line="102" selection-start-column="1" selection-end-line="102" selection-end-column="1" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#666#667#0" expanded="true" />
@@ -60,6 +57,15 @@
                 <element signature="e#1377#1378#0" expanded="true" />
                 <element signature="e#1416#1417#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/entitati/Cos.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" column="16" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -133,9 +139,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="UML Sequence" />
         <option value="UML MindMap" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -183,6 +189,12 @@
               <item name="ProiectMagazinOnlineDirig" type="b2602c69:ProjectViewProjectNode" />
               <item name="ProiectMagazinOnlineDirig" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ProiectMagazinOnlineDirig" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ProiectMagazinOnlineDirig" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="entitati" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -253,8 +265,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="210" y="23" width="1230" height="877" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21464646" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21464646" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -265,13 +278,13 @@
       <window_info active="true" id="simpleUML" order="8" visible="true" weight="0.3297568" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.39370078" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.39370078" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39895013" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.40944883" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.511811" />
-      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.4985694" weight="0.324147" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.4985694" visible="true" weight="0.324147" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50143063" side_tool="true" weight="0.511811" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.32939634" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -421,8 +434,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/entitati/Magazin.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="82">
-          <caret line="74" column="5" lean-forward="true" selection-start-line="74" selection-start-column="5" selection-end-line="74" selection-end-column="5" />
+        <state relative-caret-position="372">
+          <caret line="102" column="1" lean-forward="true" selection-start-line="102" selection-start-column="1" selection-end-line="102" selection-end-column="1" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#666#667#0" expanded="true" />
@@ -438,6 +451,13 @@
             <element signature="e#1377#1378#0" expanded="true" />
             <element signature="e#1416#1417#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/entitati/Cos.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="16" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
         </state>
       </provider>
     </entry>
