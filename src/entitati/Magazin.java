@@ -26,33 +26,32 @@ public class Magazin extends Marketplace {
     public void setContBancarMagazin(String cont) { this.contBancarMagazin = cont; }
     public void setStoc(HashMap<String, Integer> stoc) { this.stocMagazin = stoc; }
 
-    /*public void adaugaStocMagazin(Produs produs, int cantitate) {
+    public void adaugaStocMagazin(Produs produs, int cantitate) {
         stocMagazin = new HashMap<String, Integer>();
         stocMagazin.put(produs.numeProdus, cantitate);
-        System.out.println("Am adaugat in stocul magazinului " + numeMagazin + " produsul de tip " + produs.numeProdus + " in cantitate de " + cantitate + " bucati");
-    }*/
-    public void adaugaStocMagazin(Produs produs, int cantitate) {
-
-        stocMagazin.put(produs.numeProdus, cantitate);
-        System.out.println("Am adaugat in stocul magazinului produsul de tip " + produs.numeProdus + " intr-o " + "cantitate de "
-                + cantitate + " bucati!");
+        System.out.println("Am adaugat in stocul magazinului " + this.numeMagazin + " produsul de tip " + produs.numeProdus + " in cantitate de " + cantitate + " bucati");
     }
-    public void interogareStoc(Produs produs , String produsCautat , int cantitate) {
 
-        if (new Produs().numeProdus == produsCautat) {
-            if (new Produs().cantitateProdus >= cantitate) {
-                System.out.println("Produsul " + new Produs().numeProdus + " are cantitatea de " + new Produs().cantitateProdus);
-                //adaugaInCosulDeCumparaturi(produsCautat, cantitate);
-            }
-            else{
-                System.out.println("Stoc insuficient");
+    public void interogareStoc(HashMap<String, Integer> cosCumparaturi) {
+
+        for (Map.Entry i : stocMagazin.entrySet()){
+            for(Map.Entry j: cosCumparaturi.entrySet()){
+                if (i.getKey() == j.getKey()){
+                    System.out.println("Produsul " + i.getKey() + " este pe stoc");
+                    if (i.getValue() == j.getValue()){
+                        System.out.println("Produsul " + i.getKey() + " in cantitatea dorita");
+                    }
+                    else {
+                        System.out.println("Produsul "+ i.getKey()+ " nu este pe stoc in cantitatea dorita");
+                    }
+                }
+                else {
+                    System.out.println("Produsl " +j.getKey()+ " nu este pe stoc");
+                }
             }
         }
-        else
-            {
-                System.out.println("Nu exista produsul ");
-        }
-        //TO DO return adaugaInCosulDeCumparaturi
+
+
     }
     public void orarMagazin() {
         orar.put("Duminca   ", " Magazinul este inchis");

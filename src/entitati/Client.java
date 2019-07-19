@@ -63,8 +63,12 @@ public class Client extends Produs {
     }
 
     public HashMap<String, Integer> adaugaInCosulDeCumparaturi(String numeProdus, int cantitateProdus) {
-        cosCumparaturi.put(numeProdus, cantitateProdus);
-        return cosCumparaturi;
+
+        this.cosCumparaturi.put(numeProdus, cantitateProdus);
+        return this.cosCumparaturi;
+    }
+    public void cumpara (HashMap<String, Integer> cosCumparaturi){
+
     }
 
     public void livrareClient() {
