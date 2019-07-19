@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Produs extends Magazin{
+public class Produs {
 
     int cantitateProdus;
     double pretProdus;

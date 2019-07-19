@@ -18,8 +18,11 @@ public class Executie {
         NewProduct.setNumeProdus("Sony Bravia");
         NewStore.adaugaStocMagazin(NewProduct,30);
         Client Mircea = new Client();
-        cos = Mircea.adaugaInCosulDeCumparaturi("Sony Bravia", 15);
-        cos = Mircea.adaugaInCosulDeCumparaturi("iPhone XS", 2);
+        cos = Mircea.adaugaInCosulDeCumparaturi("Sony Bravia", 14);
+        //cos = Mircea.adaugaInCosulDeCumparaturi("iPhone XS", 2);
         NewStore.interogareStoc(cos);
+        //Mircea.cumparaCosCumparaturi(cos);
+        NewStore.updateStocMagazin(cos);
+
     }
 }
