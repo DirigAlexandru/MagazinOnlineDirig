@@ -3,7 +3,7 @@ package entitati;
 import java.util.*;
 
 
-public class Client extends Produs {
+public class Client extends Magazin {
 
     String adresaEmailClient;
     String numeClient;
@@ -63,11 +63,24 @@ public class Client extends Produs {
     }
 
     public HashMap<String, Integer> adaugaInCosulDeCumparaturi(String numeProdus, int cantitateProdus) {
+
         cosCumparaturi.put(numeProdus, cantitateProdus);
+        //System.out.println("In cosul de cumparaturi avem:");{
+        //for (HashMap.Entry i : cosCumparaturi.entrySet()) {
+        //System.out.println("    produsul " + i.getKey() + " / " + i.getValue() + " buc.");
+       // }
+        //}
         return cosCumparaturi;
     }
+    public void cumparaCosCumparaturi (HashMap<String, Integer> cosCumparaturi) {
+        if (interogareStoc(cosCumparaturi)) {
+            for (HashMap.Entry i : cosCumparaturi.entrySet()) {
+                System.out.println("Clientul va cumpara" + i.getKey() + " / " + i.getValue() + " buc.");
+            }
+        }
+    }
 
-    public void livrareClient() {
+    /*public void livrareClient() {
         System.out.println("Adresa de livrare a produsului este " + this.adresaLivrareClientDefault);
 
         Scanner keyboard = new Scanner(System.in);
@@ -117,7 +130,7 @@ public class Client extends Produs {
 
     }
 
-    public void adaugaInformatiiFirma(Client client) {
+    /*public void adaugaInformatiiFirma(Client client) {
         Scanner keyboard = new Scanner(System.in);
 
         if (persoanaJuridica) {
@@ -145,7 +158,7 @@ public class Client extends Produs {
             System.out.println("Clientul nu este persoana juridica");
         }
         System.out.println("Clientul " + client.numeClient + " are un discount de " + this.valoareDiscountPersoanaJuridica);
-    }
+    }*/
 
 }
 
