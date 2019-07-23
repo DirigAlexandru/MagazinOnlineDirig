@@ -54,34 +54,34 @@ public class Magazin extends Cos {
         System.out.println("Am adaugat in stocul magazinului " + this.numeMagazin + " produsul de tip " + produs.numeProdus + " in cantitate de " + cantitate + " bucati");
     }
 
-    public void interogareStoc() {
+    public void interogareStoc(Cos cosulet) {
 
         System.out.println("Interogare stoc: ");
-        for (String i : cosCumparaturi.keySet()) {
+        for (String i : (cosulet).cosCumparaturi.keySet()) {
             for (String j : stocMagazin.keySet()) {
                 if (i == j) {
-                    if (cosCumparaturi.get(i) <= stocMagazin.get(j)) {
-                        System.out.println("Produsul " + i + " este pe stoc in cantitatea dorita de client!");
+                    if ((cosulet).cosCumparaturi.get(i) <= stocMagazin.get(j)) {
+                        System.out.println("   - produsul " + i + " este pe stoc in cantitatea dorita de client!");
                     } else {
-                        System.out.println("Produsul " + i + " NU este pe stoc cu cantitatea dorita!");
+                        System.out.println("   - produsul " + i + " NU este pe stoc cu cantitatea dorita!");
                     }
                 } else {
-                    System.out.println("Produsul " + i + " NU este pe stoc!");
+                    System.out.println("   - produsul " + i + " NU este pe stoc!");
                 }
             }
         }
     }
 
-    public void updateStocMagazin() {
+    public void updateStocMagazin(Cos cosulet) {
 
         System.out.println("Update stoc: ");
-        for (String i : cosCumparaturi.keySet()) {
+        for (String i : (cosulet).cosCumparaturi.keySet()) {
             for (String j : stocMagazin.keySet()) {
                 if (i == j) {
-                    stocMagazin.put(j, stocMagazin.get(j) - cosCumparaturi.get(i));
-                    System.out.println("Am actualizat stocul produsului " + j + " la valoarea de " + stocMagazin.get(j));
+                    stocMagazin.put(j, stocMagazin.get(j) - (cosulet).cosCumparaturi.get(i));
+                    System.out.println("    Am actualizat stocul produsului " + j + " la valoarea de " + stocMagazin.get(j));
                 } else {
-                    System.out.println("Produsul " + j + " NU mai este pe stoc!");
+                    System.out.println("    Produsul " + j + " NU mai este pe stoc!");
                 }
             }
         }

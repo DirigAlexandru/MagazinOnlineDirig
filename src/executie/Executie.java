@@ -22,8 +22,8 @@ public class Executie {
         NewProduct.setNumeProdus("iPhone XS");
         NewCos.adaugaInCosulDeCumparaturi(NewProduct, 1);
         NewCos.afisareCosCumparaturi();
-        NewStore.interogareStoc();
+        NewStore.interogareStoc(NewCos);
         //Mircea.cumparaCosCumparaturi();
-        NewStore.updateStocMagazin();
+        NewStore.updateStocMagazin(NewCos);
     }
 }

@@ -16,7 +16,6 @@ public class Produs {
     String tipProdus;
     String categorieProdus;
     int garantieProdus;
-    HashMap<String, Double> cosCumparaturi;
 
     public void setCantitateProdus(int cantitate) {
         this.cantitateProdus = cantitate;
@@ -60,21 +59,6 @@ public class Produs {
 
     public void adaugaCantitate(int cantitateNoua) {
         this.cantitateProdus = this.cantitateProdus + cantitateNoua;
-    }
-
-    public void afiseazaCantitate() {
-        System.out.println("Cantitatea produsului este de " + this.cantitateProdus + " bucati");
-    }
-
-
-    public void suplimentareStoc(String produs, int cantitateaDorita) {
-        if (this.cantitateProdus < cantitateaDorita) {
-            System.out.println("Produsul " + this.numeProdus + " are cantitate insuficienta. Au mai fost adaugate " + (cantitateaDorita - this.cantitateProdus) + " de bucati");
-            adaugaCantitate((cantitateaDorita - this.cantitateProdus));
-            //this.cantitateProdus = this.cantitateProdus + (cantitateaDorita - this.cantitateProdus);
-        } else {
-            System.out.println("Produsul " + this.numeProdus + " are cantitate suficienta (" + this.cantitateProdus + ")");
-        }
     }
 
     public void calcularePretDupaDiscount(double pretTelefon, double valoareDiscountTelefon) {
