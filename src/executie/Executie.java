@@ -1,6 +1,7 @@
 package executie;
 
 import entitati.Client;
+import entitati.Cos;
 import entitati.Magazin;
 import entitati.Produs;
 
@@ -10,19 +11,16 @@ public class Executie {
 
     public static void main(String[] args) {
 
-        HashMap<String,Integer> cos =new HashMap<>();
-
         Produs NewProduct = new Produs();
         Magazin NewStore =new Magazin();
         NewStore.setNumeMagazin("Altex");
         NewProduct.setNumeProdus("Sony Bravia");
         NewStore.adaugaStocMagazin(NewProduct,30);
+        //NewProduct.setNumeProdus("iPhone XS");
         Client Mircea = new Client();
-        cos = Mircea.adaugaInCosulDeCumparaturi("Sony Bravia", 14);
-        //cos = Mircea.adaugaInCosulDeCumparaturi("iPhone XS", 2);
-        NewStore.interogareStoc(cos);
-        //Mircea.cumparaCosCumparaturi(cos);
-        NewStore.updateStocMagazin(cos);
+        Cos NewCos = new Cos();
+        NewCos.adaugaInCosulDeCumparaturi(NewProduct, 14);
+        NewCos.afisareCosCumparaturi();
 
     }
 }

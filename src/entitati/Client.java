@@ -20,7 +20,7 @@ public class Client extends Magazin {
     double valoareDiscount;
     double valoareDiscountPersoanaJuridica;
     ArrayList<String> carduriCadou;
-    HashMap<String, Integer> cosCumparaturi = new HashMap<>();
+
     boolean persoanaJuridica;
 
     public void setAdresaLivrareClientDefualt(String adresa) {
@@ -54,24 +54,6 @@ public class Client extends Magazin {
         System.out.println("Discountul general este de: " + discount);
     }
 
-
-    public void afisareCosCumparaturi(HashMap<String, Integer> produse) {
-
-        for (Map.Entry i : produse.entrySet()) {
-            System.out.println("In cosul de cumparaturi avem produsul " + i.getKey() + " in cantitatea de " + i.getValue());
-        }
-    }
-
-    public HashMap<String, Integer> adaugaInCosulDeCumparaturi(String numeProdus, int cantitateProdus) {
-
-        cosCumparaturi.put(numeProdus, cantitateProdus);
-        //System.out.println("In cosul de cumparaturi avem:");{
-        //for (HashMap.Entry i : cosCumparaturi.entrySet()) {
-        //System.out.println("    produsul " + i.getKey() + " / " + i.getValue() + " buc.");
-       // }
-        //}
-        return cosCumparaturi;
-    }
     public void cumparaCosCumparaturi (HashMap<String, Integer> cosCumparaturi) {
         if (interogareStoc(cosCumparaturi)) {
             for (HashMap.Entry i : cosCumparaturi.entrySet()) {
