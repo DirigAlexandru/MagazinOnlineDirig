@@ -13,14 +13,17 @@ public class Executie {
 
         Produs NewProduct = new Produs();
         Magazin NewStore =new Magazin();
+        Cos NewCos = new Cos();
         NewStore.setNumeMagazin("Altex");
         NewProduct.setNumeProdus("Sony Bravia");
         NewStore.adaugaStocMagazin(NewProduct,30);
-        //NewProduct.setNumeProdus("iPhone XS");
         Client Mircea = new Client();
-        Cos NewCos = new Cos();
-        NewCos.adaugaInCosulDeCumparaturi(NewProduct, 14);
+        NewCos.adaugaInCosulDeCumparaturi(NewProduct, 2);
+        NewProduct.setNumeProdus("iPhone XS");
+        NewCos.adaugaInCosulDeCumparaturi(NewProduct, 1);
         NewCos.afisareCosCumparaturi();
-
+        NewStore.interogareStoc();
+        //Mircea.cumparaCosCumparaturi();
+        NewStore.updateStocMagazin();
     }
 }

@@ -54,13 +54,13 @@ public class Client extends Magazin {
         System.out.println("Discountul general este de: " + discount);
     }
 
-    public void cumparaCosCumparaturi (HashMap<String, Integer> cosCumparaturi) {
-        if (interogareStoc(cosCumparaturi)) {
+    /*public void cumparaCosCumparaturi (HashMap<String, Integer> cosCumparaturi) {
+        if (interogareStoc()) {
             for (HashMap.Entry i : cosCumparaturi.entrySet()) {
                 System.out.println("Clientul va cumpara" + i.getKey() + " / " + i.getValue() + " buc.");
             }
         }
-    }
+    }*/
 
     /*public void livrareClient() {
         System.out.println("Adresa de livrare a produsului este " + this.adresaLivrareClientDefault);

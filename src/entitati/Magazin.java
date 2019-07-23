@@ -8,7 +8,7 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Set;
 
-public class Magazin extends Marketplace {
+public class Magazin extends Cos {
 
     String numeMagazin;
     String adresaMagazin;
@@ -54,36 +54,35 @@ public class Magazin extends Marketplace {
         System.out.println("Am adaugat in stocul magazinului " + this.numeMagazin + " produsul de tip " + produs.numeProdus + " in cantitate de " + cantitate + " bucati");
     }
 
-    public boolean interogareStoc(HashMap<String, Integer> cosCumparaturi) {
+    public void interogareStoc() {
 
         System.out.println("Interogare stoc: ");
-        Set<String> produseDinCos = cosCumparaturi.keySet();
-        for (String p : produseDinCos) {
-            if (stocMagazin.containsKey(p)) {
-                if (stocMagazin.get(p) >= cosCumparaturi.get(p)) {
-                    System.out.println("    produsul " + p + " este pe stoc in cantitatea dorita de client!");
+        for (String i : cosCumparaturi.keySet()) {
+            for (String j : stocMagazin.keySet()) {
+                if (i == j) {
+                    if (cosCumparaturi.get(i) <= stocMagazin.get(j)) {
+                        System.out.println("Produsul " + i + " este pe stoc in cantitatea dorita de client!");
+                    } else {
+                        System.out.println("Produsul " + i + " NU este pe stoc cu cantitatea dorita!");
+                    }
                 } else {
-                    System.out.println("    produsul " + p + " NU este pe stoc cu cantitatea dorita!");
-                    return false;
+                    System.out.println("Produsul " + i + " NU este pe stoc!");
                 }
-            } else {
-                System.out.println("    produsul " + p + " NU este pe stoc!");
-                return false;
             }
         }
-        return true;
     }
 
-    public void updateStocMagazin(HashMap<String, Integer> cosCumparaturi) {
+    public void updateStocMagazin() {
 
         System.out.println("Update stoc: ");
-        Set<String> produseDinCos = cosCumparaturi.keySet();
-        for (String p : produseDinCos) {
-            if (stocMagazin.containsKey(p)) {
-                int cantitateStocMagazin = stocMagazin.get(p);
-                int cantitateCosCumparaturi = cosCumparaturi.get(p);
-                int stocRamas = cantitateStocMagazin - cantitateCosCumparaturi;
-                System.out.println("In stocul magazinului mai sunt " + stocRamas + " bucati din " + stocMagazin.get(p));
+        for (String i : cosCumparaturi.keySet()) {
+            for (String j : stocMagazin.keySet()) {
+                if (i == j) {
+                    stocMagazin.put(j, stocMagazin.get(j) - cosCumparaturi.get(i));
+                    System.out.println("Am actualizat stocul produsului " + j + " la valoarea de " + stocMagazin.get(j));
+                } else {
+                    System.out.println("Produsul " + j + " NU mai este pe stoc!");
+                }
             }
         }
     }
@@ -101,3 +100,4 @@ public class Magazin extends Marketplace {
         }
     }
 }
+
