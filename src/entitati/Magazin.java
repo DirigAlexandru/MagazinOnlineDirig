@@ -17,7 +17,7 @@ public class Magazin extends Cos {
     Map<String, String> orar = new LinkedHashMap<>();
     HashMap<String, String> orarMagazin; //LocalDateTime - to check if is open at  given time
     String contBancarMagazin;
-    HashMap<String, Integer> stocMagazin; // if stocMagazin <50 suplimenteaza pana la o anumita valoare e.g. 100
+    HashMap<String, Integer> stocMagazin = new HashMap<>(); // if stocMagazin <50 suplimenteaza pana la o anumita valoare e.g. 100
 
     public void setNumeMagazin(String nume) {
         this.numeMagazin = nume;
@@ -48,25 +48,33 @@ public class Magazin extends Cos {
         this.stocMagazin = stoc;
     }
 
+    public void afisareStocMagazin() {
+
+        System.out.println("In stocul magazinului avem: ");
+        for (String i : stocMagazin.keySet()) {
+            System.out.println("   - produsul " + i + " in cantitatea de " + stocMagazin.get(i) + " buc.");
+        }
+    }
+
     public void adaugaStocMagazin(Produs produs, int cantitate) {
-        stocMagazin = new HashMap<String, Integer>();
+
         stocMagazin.put(produs.numeProdus, cantitate);
-        System.out.println("Am adaugat in stocul magazinului " + this.numeMagazin + " produsul de tip " + produs.numeProdus + " in cantitate de " + cantitate + " bucati");
+        System.out.println("Am adaugat in stocul magazinului " + this.numeMagazin + " produsul " + produs.numeProdus + " in cantitate de " + cantitate + " bucati");
     }
 
     public void interogareStoc(Cos cosulet) {
 
         System.out.println("Interogare stoc: ");
-        for (String i : (cosulet).cosCumparaturi.keySet()) {
-            for (String j : stocMagazin.keySet()) {
-                if (i == j) {
+
+        if ((cosulet).cosCumparaturi.keySet().equals(stocMagazin.keySet())) {
+            for (String i : (cosulet).cosCumparaturi.keySet()) {
+                for (String j : stocMagazin.keySet()) {
                     if ((cosulet).cosCumparaturi.get(i) <= stocMagazin.get(j)) {
                         System.out.println("   - produsul " + i + " este pe stoc in cantitatea dorita de client!");
+                        break;
                     } else {
                         System.out.println("   - produsul " + i + " NU este pe stoc cu cantitatea dorita!");
                     }
-                } else {
-                    System.out.println("   - produsul " + i + " NU este pe stoc!");
                 }
             }
         }
@@ -75,17 +83,18 @@ public class Magazin extends Cos {
     public void updateStocMagazin(Cos cosulet) {
 
         System.out.println("Update stoc: ");
-        for (String i : (cosulet).cosCumparaturi.keySet()) {
-            for (String j : stocMagazin.keySet()) {
-                if (i == j) {
+        if ((cosulet).cosCumparaturi.keySet().equals(stocMagazin.keySet())) {
+            for (String i : (cosulet).cosCumparaturi.keySet()) {
+                for (String j : stocMagazin.keySet()) {
                     stocMagazin.put(j, stocMagazin.get(j) - (cosulet).cosCumparaturi.get(i));
                     System.out.println("    Am actualizat stocul produsului " + j + " la valoarea de " + stocMagazin.get(j));
-                } else {
-                    System.out.println("    Produsul " + j + " NU mai este pe stoc!");
                 }
             }
+        } else {
+            System.out.println("    Produsul  NU mai este pe stoc!");
         }
     }
+
 
     public void orarMagazin() {
         orar.put("Duminca   ", " Magazinul este inchis");
@@ -100,4 +109,5 @@ public class Magazin extends Cos {
         }
     }
 }
+
 

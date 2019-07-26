@@ -6,11 +6,6 @@ import java.util.Map;
 public class Cos extends Produs {
     HashMap<String, Integer> cosCumparaturi = new HashMap<>();
 
-    public void adaugValoriCos(){
-        cosCumparaturi.put("sony", 3);
-        cosCumparaturi.put("iPhone", 2);
-    }
-
     public HashMap<String, Integer> adaugaInCosulDeCumparaturi(Produs produs, int cantitateProdus) {
 
         cosCumparaturi.put(produs.numeProdus, cantitateProdus);

@@ -20,10 +20,12 @@ public class Executie {
         Client Mircea = new Client();
         NewCos.adaugaInCosulDeCumparaturi(NewProduct, 2);
         NewProduct.setNumeProdus("iPhone XS");
+        NewStore.adaugaStocMagazin(NewProduct,10); //comment this line to check the interogareStoc and updateStoc method
         NewCos.adaugaInCosulDeCumparaturi(NewProduct, 1);
         NewCos.afisareCosCumparaturi();
         NewStore.interogareStoc(NewCos);
         //Mircea.cumparaCosCumparaturi();
         NewStore.updateStocMagazin(NewCos);
+        //NewStore.afisareStocMagazin();
     }
 }
