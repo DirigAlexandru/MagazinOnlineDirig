@@ -73,7 +73,8 @@ public class Magazin extends Cos {
                         System.out.println("   - produsul " + i + " este pe stoc in cantitatea dorita de client!");
                         break;
                     } else {
-                        System.out.println("   - produsul " + i + " NU este pe stoc cu cantitatea dorita!");
+                        System.out.println("   - produsul " + i + " NU este pe stoc! Cantitate comandata: "+ (cosulet).cosCumparaturi.get(i) + " Cantitate stoc: "+ stocMagazin.get(j));
+                        break;
                     }
                 }
             }

@@ -21,6 +21,9 @@ public class Executie {
         NewCos.adaugaInCosulDeCumparaturi(NewProduct, 2);
         NewProduct.setNumeProdus("iPhone XS");
         NewStore.adaugaStocMagazin(NewProduct,10); //comment this line to check the interogareStoc and updateStoc method
+        NewCos.adaugaInCosulDeCumparaturi(NewProduct, 20);
+        NewProduct.setNumeProdus("iPad Pro");
+        NewStore.adaugaStocMagazin(NewProduct, 10);
         NewCos.adaugaInCosulDeCumparaturi(NewProduct, 1);
         NewCos.afisareCosCumparaturi();
         NewStore.interogareStoc(NewCos);
